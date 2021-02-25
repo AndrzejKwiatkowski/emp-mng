@@ -1,17 +1,25 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
-                </div>
+@extends('layouts.app')
+@section('content')
+<div class="container">
+    <div class="row">
+      <div class="col">Column</div>
+      <div class="col">Column</div>
+      <div class="w-100"></div>
+      <div class="col">Column</div>
+      <div class="col">Column <span class="bi bi-search" style="height: 200px" ></div>
+        <div><i class="fas fa-cloud"></i>
+        <i class="fas fa-coffee"></i>
+        <i class="fas fa-car"></i>
+        <i class="fas fa-file"></i>
+        <i class="fas fa-bars"></i>
             </div>
-        </div>
+
     </div>
-</x-app-layout>
+    <button type="submit" class="btn btn-primary"><span class="fa fa-search"></span> Search</button>
+<button type="submit" class="btn btn-secondary"><span class="fa fa-search"></span> Search</button>
+<i class="bi bi-people"></i>
+
+</div><i class="bi bi-arrow-right bi-lg"></i>
+<i class="bi bi-camera bi-10x"></i>
+@endsection
+

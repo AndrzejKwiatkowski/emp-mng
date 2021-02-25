@@ -1,6 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,5 +26,13 @@ Route::get('/dashboard', function () {
 Route::get('/test', function () {
     return view('test');
 })->middleware(['auth'])->name('dashboard');
+//
+//Route::get('/user/profile', [UserController::class, 'show']);
+Route::resource('user', UserController::class);
+Route::post('/update-user-profile', [UserController::class, 'updateUserProfile'])->name('update.user.profile');
 
 require __DIR__.'/auth.php';
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
