@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+var $ = require( "jquery" );
 
 /*
  |--------------------------------------------------------------------------
@@ -16,4 +17,14 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/profile.scss', 'public/css')
     .sourceMaps();
 
+
+mix.scripts(
+    'node_modules/fullcalendar/main.min.js',
+
+ 'public/js/app.js');
+
+ mix.scripts([
+    'node_modules/fullcalendar/main.min.js',
+    ],
+ 'public/js/app.js');
 

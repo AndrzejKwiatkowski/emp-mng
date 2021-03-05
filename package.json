@@ -28,6 +28,7 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.2",
-        "bootstrap-icons": "^1.4.0"
+        "bootstrap-icons": "^1.4.0",
+        "fullcalendar": "^5.5.1"
     }
 }

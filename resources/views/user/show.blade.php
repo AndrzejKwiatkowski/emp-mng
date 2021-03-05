@@ -1,5 +1,9 @@
 @extends('layouts.app')
 @section('content')
+<?php
+$user->userProfile->user_id == Auth::id() ? $disabled = '' : $disabled = 'disabled'
+?>
+
 
 <link href="{{ asset('/css/profile.css') }}" rel="stylesheet">
 <div class="container">
@@ -35,31 +39,31 @@
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                         <label for="firstName">First Name</label>
-                        <input type="text" class="form-control" id="firstName" name="first_name" placeholder="Enter first name" value="{{ $user->userProfile->first_name ?? null}}">
+                        <input type="text" class="form-control" id="firstName" name="first_name" placeholder="Enter first name" {{ $disabled }} value="{{ $user->userProfile->first_name ?? null}}">
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                         <label for="lastName">Last Name</label>
-                        <input type="text" class="form-control" id="lastName" name="last_name" placeholder="Enter last name" value="{{ $user->userProfile->last_name ?? null}}">
+                        <input type="text" class="form-control" id="lastName" name="last_name" placeholder="Enter last name" {{ $disabled }} value="{{ $user->userProfile->last_name ?? null}}">
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                         <label for="phone">Phone</label>
-                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter phone number" value="{{ $user->userProfile->phone ?? null}}">
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter phone number" {{ $disabled }} value="{{ $user->userProfile->phone ?? null}}">
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                         <label for="brithday">Brithday</label>
-                        <input type="date" class="form-control" id="brithday" name="brith_day" placeholder="Enter brithday date" value="{{ $user->userProfile->brith_day ?? null}}">
+                        <input type="date" class="form-control" id="brithday" name="brith_day" placeholder="Enter brithday date" {{ $disabled }} value="{{ $user->userProfile->brith_day ?? null}}">
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                         <label for="brithday">Job title</label>
-                        <input type="text" class="form-control" id="jobTitle" name="job_title" placeholder="Enter job title" value="{{ $user->userProfile->job_title ?? null}}">
+                        <input type="text" class="form-control" id="jobTitle" name="job_title" placeholder="Enter job title" {{ $disabled }} value="{{ $user->userProfile->job_title ?? null}}">
                     </div>
                 </div>
             </div>
@@ -70,26 +74,26 @@
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                         <label for="sTate">Country</label>
-                        <input type="text" class="form-control" id="country" name="country" placeholder="Enter Country" value="{{ $user->userProfile->country ?? null}}">
+                        <input type="text" class="form-control" id="country" name="country" placeholder="Enter Country" {{ $disabled }} value="{{ $user->userProfile->country ?? null}}">
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                         <label for="Street">Street</label>
-                        <input type="name" class="form-control" id="street" name="street" placeholder="Enter Street" value="{{ $user->userProfile->street ?? null}}">
+                        <input type="name" class="form-control" id="street" name="street" placeholder="Enter Street" {{ $disabled }} value="{{ $user->userProfile->street ?? null}}">
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                         <label for="city">City</label>
-                        <input type="name" class="form-control" id="city" name="city" placeholder="Enter City" value="{{ $user->userProfile->city ?? null}}">
+                        <input type="name" class="form-control" id="city" name="city" placeholder="Enter City" {{ $disabled }} value="{{ $user->userProfile->city ?? null}}">
                     </div>
                 </div>
 
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                         <label for="post">Post Code</label>
-                        <input type="text" pattern="[0-9]{2}[-][0-9]{3}" class="form-control" id="post" name="post_code" placeholder="Post Code" value="{{ $user->userProfile->post_code ?? null}}">
+                        <input type="text" pattern="[0-9]{2}[-][0-9]{3}" class="form-control" id="post" name="post_code" placeholder="Post Code" {{ $disabled }} value="{{ $user->userProfile->post_code ?? null}}">
                     </div>
                 </div>
             </div>
@@ -111,6 +115,6 @@
     @endsection
 
     <script type="text/javascript">
-        //alert('executing js here..')
-
+    // var test = "{{$user->userProfile->last_name}}";
+    //     alert(test)
     </script>
